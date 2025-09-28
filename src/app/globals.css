@@ -24,3 +24,65 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+@keyframes pulse-glow {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.6),
+      0 0 40px rgba(59, 130, 246, 0.4);
+  }
+  50% {
+    transform: scale(1.08);
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.8),
+      0 0 60px rgba(59, 130, 246, 0.5);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.drop-shadow-glow {
+  filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.7));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes scroll-slow {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-50%); /* επειδή διπλασιάσαμε το content */
+  }
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-scroll-left {
+  display: flex;
+  animation: scroll-left 20s linear infinite;
+}
+
+.animate-scroll-right {
+  display: flex;
+  animation: scroll-right 20s linear infinite;
+}
