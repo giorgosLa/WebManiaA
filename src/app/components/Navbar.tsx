@@ -16,14 +16,14 @@ export default function Navbar() {
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-b from-[#fff7f0] to-transparent" />
 
       {/* Logo */}
-      <div className="flex-shrink-0 ml-8">
+      <div className="flex-shrink-0 ml-6 lg:ml-8">
         <Link href="/">
           <Image
             src="/logo.svg"
             alt="Logo"
             width={240}
             height={240}
-            className="w-[220px] h-auto"
+            className="w-[160px] lg:w-[220px] h-auto"
           />
         </Link>
       </div>
@@ -113,7 +113,7 @@ export default function Navbar() {
                 alt="Logo"
                 width={220}
                 height={220}
-                className="w-[240px] h-auto mb-6"
+                className="w-[180px] h-auto mb-6"
               />
             </Link>
 

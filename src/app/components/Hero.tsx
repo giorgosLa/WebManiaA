@@ -24,18 +24,13 @@ export default function Hero() {
       ref={sectionRef}
       className="w-full min-h-screen flex flex-col lg:flex-row items-center justify-center gap-10 px-6 lg:px-16 bg-gradient-to-r from-orange-50 to-white"
     >
-      {/* Εικόνα */}
-      <div ref={imageRef} className="flex-1 flex justify-center">
-        <Lottie animationData={digital} loop={true} />
-      </div>
-
       {/* Κείμενο */}
       <div className="flex-1 items-center text-center md:text-left">
         <h1 className="text-4xl lg:text-5xl font-bold leading-snug text-gray-900">
           Όλη η{" "}
-          <span className="inline-block min-w-[7cd00px] text-blue-600">
+          <span className=" inline-block min-w-[280px] text-blue-600 items-center">
             <ReactTyped
-              strings={["Στρατηγική", "Ανάπτυξη", "Δημιουργικότητα"]}
+              strings={["Στρατηγική", "Ανάπτυξη", "Υλοποίηση"]}
               typeSpeed={70}
               backSpeed={40}
               loop
@@ -46,17 +41,8 @@ export default function Hero() {
         </h1>
 
         <p className="mt-4 text-lg text-gray-600 font-medium">
-          <ReactTyped
-            strings={[
-              "Στρατηγική σκέψη, hands-on υλοποίηση και συνεχής υποστήριξη.",
-              "Digital Marketing που φέρνει αποτελέσματα.",
-              "Η ομάδα που βάζει τις ιδέες σου σε δράση.",
-            ]}
-            typeSpeed={50}
-            backSpeed={30}
-            backDelay={1500}
-            loop
-          />
+          Αναλαμβάνουμε την ανάπτυξη της επιχείρησής σου με ολοκληρωμένες λύσεις
+          digital marketing που φέρνουν μετρήσιμα αποτελέσματα.
         </p>
 
         {/* Animated list */}
@@ -81,6 +67,10 @@ export default function Hero() {
         >
           ΑΣ ΜΙΛΗΣΟΥΜΕ
         </motion.button>
+      </div>
+      {/* Εικόνα */}
+      <div ref={imageRef} className="flex-1 flex justify-center">
+        <Lottie animationData={digital} loop={true} />
       </div>
     </section>
   );
