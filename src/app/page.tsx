@@ -8,12 +8,11 @@ import Services from "./components/Services";
 import WhyUs from "./components/WhyUs";
 import ContactFrom from "./components/ContactForm";
 import Footer from "./components/Footer";
+import Projects from "./components/projects";
 
 export default function Home() {
   return (
     <main className="w-full bg-white ">
-      <Navbar />
-
       <section className="flex items-center justify-center ">
         <Hero />
       </section>
@@ -24,13 +23,13 @@ export default function Home() {
 
       <WhyUs />
 
+      <Projects />
+
       <ReviewsSection />
 
       <ContactFrom />
 
       <FAQs />
-
-      <Footer />
     </main>
   );
 }

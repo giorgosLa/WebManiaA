@@ -9,15 +9,18 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@emailjs/nodejs": "^5.0.2",
     "emailjs-com": "^3.2.0",
-    "framer-motion": "^12.23.22",
+    "framer-motion": "^12.23.24",
     "gsap": "^3.13.0",
+    "keen-slider": "^6.8.6",
     "lottie-react": "^2.4.1",
     "lucide-react": "^0.544.0",
     "next": "15.5.3",
     "react": "19.1.0",
     "react-countup": "^6.5.3",
     "react-dom": "19.1.0",
+    "react-hot-toast": "^2.6.0",
     "react-typed": "^2.0.12"
   },
   "devDependencies": {

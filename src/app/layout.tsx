@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "react-hot-toast";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +30,37 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        {/* ✅ Navbar πάνω απ' όλα */}
+        <Navbar />
+
+        {/* ✅ Όλες οι σελίδες */}
+        <main className="min-h-screen">{children}</main>
+
+        <Footer />
+
+        {/* ✅ Toast notifications */}
+        <Toaster
+          position="bottom-center"
+          toastOptions={{
+            style: {
+              background: "#0f172a",
+              color: "#fff",
+              border: "1px solid #3b82f6",
+            },
+            success: {
+              iconTheme: {
+                primary: "#22c55e",
+                secondary: "#fff",
+              },
+            },
+            error: {
+              iconTheme: {
+                primary: "#ef4444",
+                secondary: "#fff",
+              },
+            },
+          }}
+        />
       </body>
     </html>
   );

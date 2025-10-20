@@ -13,10 +13,10 @@ export default function Hero() {
   const textRef = useRef<HTMLDivElement | null>(null);
 
   const listItems = [
-    "✔️ Εξειδίκευση σε B2C & B2B, Ελλάδα και εξωτερικό",
-    "✔️ Απόλυτη εστίαση σε ανάπτυξη, όχι απλώς παρουσία",
-    "✔️ Holistic Marketing για Business Growth",
-    "✔️ Tailored λύση για κάθε σου πρόκληση",
+    " Custom Web Development με σύγχρονες τεχνολογίες",
+    " Responsive Design για άψογη εμπειρία σε όλες τις συσκευές",
+    " Βελτιστοποίηση ταχύτητας & SEO από την αρχή",
+    " Scalable αρχιτεκτονική για μελλοντική ανάπτυξη",
   ];
 
   return (
@@ -26,34 +26,78 @@ export default function Hero() {
     >
       {/* Κείμενο */}
       <div className="flex-1 items-center text-center md:text-left">
-        <h1 className="text-4xl lg:text-5xl font-bold leading-snug text-gray-900">
-          Όλη η{" "}
-          <span className=" inline-block min-w-[280px] text-blue-600 items-center">
-            <ReactTyped
-              strings={["Στρατηγική", "Ανάπτυξη", "Υλοποίηση"]}
-              typeSpeed={70}
-              backSpeed={40}
-              loop
-            />
-          </span>{" "}
-          που χρειάζεσαι, από επαγγελματίες που συνδυάζουν{" "}
-          <span className="text-gray-900">γνώση και πραγματικό ενδιαφέρον</span>
-        </h1>
+        <div className="flex-1 items-center text-center md:text-left">
+          <h1 className="text-4xl lg:text-5xl font-bold leading-snug text-gray-900">
+            Μετατρέπουμε ιδέες σε{" "}
+            <span className="inline-block min-w-[400px] max-w-full text-blue-600 whitespace-nowrap">
+              <ReactTyped
+                strings={[
+                  "ψηφιακές εμπειρίες.",
+                  "καινοτόμες λύσεις.",
+                  "επιχειρηματική επιτυχία.",
+                ]}
+                typeSpeed={70}
+                backSpeed={40}
+                loop
+              />
+            </span>
+          </h1>
 
-        <p className="mt-4 text-lg text-gray-600 font-medium">
-          Αναλαμβάνουμε την ανάπτυξη της επιχείρησής σου με ολοκληρωμένες λύσεις
-          digital marketing που φέρνουν μετρήσιμα αποτελέσματα.
-        </p>
+          <motion.p
+            className="mt-4 text-lg font-medium max-w-2xl text-gray-600"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
+          >
+            Σχεδιάζουμε και υλοποιούμε{" "}
+            <span className="bg-gradient-to-r from-blue-500 to-indigo-600 bg-clip-text text-transparent font-semibold">
+              custom λύσεις web development
+            </span>{" "}
+            που{" "}
+            <span className="font-semibold text-blue-600">εντυπωσιάζουν</span>,
+            αυξάνουν{" "}
+            <span className="font-semibold text-indigo-600">engagement</span>{" "}
+            και φέρνουν
+            <span className="font-semibold text-blue-500">
+              {" "}
+              πραγματικά αποτελέσματα
+            </span>{" "}
+            για την επιχείρησή σου.
+          </motion.p>
+        </div>
 
         {/* Animated list */}
-        <ul className="mt-6 space-y-2 text-gray-700">
+        <ul className="mt-6 space-y-4 text-gray-700 max-w-xl">
           {listItems.map((item, i) => (
             <motion.li
               key={i}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: i * 0.3, duration: 0.5 }}
+              initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{
+                delay: i * 0.2 + 0.8,
+                duration: 0.3,
+                ease: [0.25, 0.1, 0.25, 1],
+              }}
+              whileHover={{
+                scale: 1.05,
+                x: 4,
+                color: "#4F46E5", // Indigo-600 hover color
+                transition: { duration: 0.3 },
+              }}
+              className="relative pl-8 cursor-pointer"
             >
+              {/* Animated bullet */}
+              <motion.span
+                className="absolute left-0 top-2 w-3 h-3 rounded-full bg-blue-600"
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{
+                  delay: i * 0.2 + 1,
+                  type: "spring",
+                  stiffness: 250,
+                  damping: 15,
+                }}
+              />
               {item}
             </motion.li>
           ))}

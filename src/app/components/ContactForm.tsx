@@ -2,34 +2,59 @@
 
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
-import emailjs from "emailjs-com";
+import toast from "react-hot-toast";
 
 export default function ContactForm() {
   const formRef = useRef<HTMLFormElement | null>(null);
   const [loading, setLoading] = useState(false);
-  const [sent, setSent] = useState(false);
-  const [error, setError] = useState(false);
+  const [accepted, setAccepted] = useState(false); // ✅ switch state
 
   const sendEmail = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formRef.current) return;
 
+    if (!accepted) {
+      toast.error("Πρέπει να αποδεχτείς τους όρους απορρήτου!");
+      return;
+    }
+
     setLoading(true);
-    setError(false);
-    setSent(false);
 
     try {
-      await emailjs.sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string,
-        formRef.current,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY as string
-      );
-      setSent(true);
+      const formData = new FormData(formRef.current);
+      const user_email = formData.get("user_email");
+      const user_name = formData.get("user_name");
+      const message = formData.get("message");
+
+      // 🔹 Στείλε στο API Route σου
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: user_name,
+          email: user_email,
+          message,
+        }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || "Αποτυχία αποστολής");
+      }
+
+      // 🔹 Συνδρομή στο Mailchimp (προαιρετικό βήμα)
+      await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: user_email, name: user_name }),
+      });
+
+      toast.success("Το μήνυμα στάλθηκε με επιτυχία!");
       formRef.current.reset();
+      setAccepted(false); // reset switch
     } catch (err) {
-      console.error("EmailJS Error:", err);
-      setError(true);
+      console.error("Error:", err);
+      toast.error("Κάτι πήγε στραβά, δοκίμασε ξανά!");
     } finally {
       setLoading(false);
     }
@@ -40,13 +65,9 @@ export default function ContactForm() {
       id="contact"
       className="relative py-20 bg-gradient-to-br from-blue-50 via-white to-blue-100 overflow-hidden"
     >
-      {/* Decorative background elements */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-blue-500/20 blur-3xl rounded-full -z-10"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-400/20 blur-3xl rounded-full -z-10"></div>
-
       <div className="max-w-6xl mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Text side */}
+          {/* --- Text side --- */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -64,11 +85,11 @@ export default function ContactForm() {
             <ul className="space-y-3 text-gray-700">
               <li>
                 📞 Τηλέφωνο:{" "}
-                <span className="font-semibold">+30 210 1234567</span>
+                <span className="font-semibold">+30 6945511792</span>
               </li>
               <li>
                 📧 Email:{" "}
-                <span className="font-semibold">info@mediagram.gr</span>
+                <span className="font-semibold">info@webmania.gr</span>
               </li>
               <li>
                 📍 Διεύθυνση:{" "}
@@ -77,7 +98,7 @@ export default function ContactForm() {
             </ul>
           </motion.div>
 
-          {/* Form side */}
+          {/* --- Form side --- */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -86,6 +107,7 @@ export default function ContactForm() {
             className="bg-white/60 backdrop-blur-lg rounded-3xl shadow-2xl p-8 md:p-10 border border-white/20"
           >
             <form ref={formRef} onSubmit={sendEmail} className="space-y-6">
+              {/* Name */}
               <div className="relative">
                 <input
                   type="text"
@@ -106,6 +128,7 @@ export default function ContactForm() {
                 </label>
               </div>
 
+              {/* Email */}
               <div className="relative">
                 <input
                   type="email"
@@ -126,6 +149,7 @@ export default function ContactForm() {
                 </label>
               </div>
 
+              {/* Message */}
               <div className="relative">
                 <textarea
                   name="message"
@@ -146,6 +170,28 @@ export default function ContactForm() {
                 </label>
               </div>
 
+              {/* ✅ Privacy Switch */}
+              <div className="flex items-center gap-3">
+                <button
+                  type="button"
+                  onClick={() => setAccepted(!accepted)}
+                  className={`w-12 h-6 flex items-center rounded-full p-1 transition 
+                             ${accepted ? "bg-green-500" : "bg-gray-300"}`}
+                >
+                  <div
+                    className={`bg-white w-4 h-4 rounded-full shadow-md transform transition 
+                                ${accepted ? "translate-x-6" : ""}`}
+                  ></div>
+                </button>
+                <span className="text-sm text-gray-600">
+                  Αποδέχομαι τους{" "}
+                  <a href="/privacy" className="text-blue-600 underline">
+                    όρους απορρήτου
+                  </a>
+                </span>
+              </div>
+
+              {/* Submit */}
               <motion.button
                 type="submit"
                 disabled={loading}
@@ -155,17 +201,6 @@ export default function ContactForm() {
               >
                 {loading ? "Αποστολή..." : "Αποστολή Μηνύματος"}
               </motion.button>
-
-              {sent && (
-                <p className="text-green-600 text-sm mt-2">
-                  ✅ Το μήνυμα στάλθηκε με επιτυχία!
-                </p>
-              )}
-              {error && (
-                <p className="text-red-600 text-sm mt-2">
-                  ❌ Παρουσιάστηκε σφάλμα. Δοκίμασε ξανά.
-                </p>
-              )}
             </form>
           </motion.div>
         </div>

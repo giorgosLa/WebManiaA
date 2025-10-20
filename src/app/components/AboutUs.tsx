@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle, TrendingUp, Rocket, Brain } from "lucide-react";
+import { TrendingUp, Rocket, Brain } from "lucide-react";
 
 export default function AboutUs() {
   return (
@@ -23,28 +23,27 @@ export default function AboutUs() {
           className="max-w-3xl mx-auto text-center"
         >
           <h2
-            className="text-3xl md:text-4xl font-extrabold mb-8 
-                       bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 
-                       bg-clip-text text-transparent drop-shadow-sm"
+            className="text-3xl md:text-4xl font-extrabold text-center mb-14 
+                     bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 
+                     bg-clip-text text-transparent drop-shadow-glow"
           >
             Ποιοι Είμαστε
           </h2>
 
           <p className="text-gray-700 leading-relaxed text-lg mb-6">
-            Στη <span className="font-semibold text-blue-600">Mediagram</span>{" "}
-            πιστεύουμε πως κάθε brand αξίζει να ξεχωρίζει. Είμαστε μια δυναμική
-            ομάδα digital marketers, δημιουργικών και στρατηγικών αναλυτών που
-            μοιράζονται ένα κοινό πάθος: να μετατρέπουν ιδέες σε αποτελέσματα.
+            Στη <span className="font-semibold text-blue-600">Webmania</span>{" "}
+            εξειδικευόμαστε στη δημιουργία σύγχρονων websites και e-shops που
+            ξεχωρίζουν για την αισθητική, την ταχύτητα και την απόδοσή τους.
+            Συνδυάζουμε design, τεχνολογία και στρατηγική για να προσφέρουμε
+            digital εμπειρίες που αυξάνουν πωλήσεις και χτίζουν εμπιστοσύνη.
           </p>
 
           <p className="text-gray-700 leading-relaxed mb-6">
-            Με εμπειρία σε{" "}
+            Από μικρές επιχειρήσεις μέχρι αναπτυσσόμενα brands, δημιουργούμε{" "}
             <span className="font-medium text-indigo-600">
-              social media, performance marketing και branding
+              custom development λύσεις με έμφαση στην ταχύτητα και άριστο SEO
             </span>
-            , έχουμε συνεργαστεί με δεκάδες επιχειρήσεις — από startups μέχρι
-            καθιερωμένες εταιρείες — βοηθώντας να αυξήσουν τις πωλήσεις τους, να
-            ενισχύσουν την online παρουσία τους και να αποκτήσουν πιστό κοινό.
+            , εστιάζοντας σε UX/UI σχεδιασμό και υψηλές επιδόσεις.
           </p>
 
           {/* Highlights List */}
@@ -52,24 +51,27 @@ export default function AboutUs() {
             <li className="flex items-start gap-3">
               <TrendingUp className="w-6 h-6 text-blue-600 mt-1" />
               <span className="text-gray-700">
-                Αύξηση πωλήσεων e-shop έως και{" "}
-                <span className="font-semibold">+200%</span> σε λιγότερο από 6
-                μήνες.
+                Αύξηση conversion rate σε e-shops έως{" "}
+                <span className="font-semibold">+150%</span> με βελτιστοποίηση
+                UX.
               </span>
             </li>
             <li className="flex items-start gap-3">
               <Rocket className="w-6 h-6 text-purple-600 mt-1" />
               <span className="text-gray-700">
-                Επιτυχημένες καμπάνιες σε Meta & Google Ads με{" "}
-                <span className="font-semibold">πολλαπλασιαστικό ROI</span>.
+                Ταχύτατα websites με{" "}
+                <span className="font-semibold">Google PageSpeed 90+</span>{" "}
+                score.
               </span>
             </li>
             <li className="flex items-start gap-3">
               <Brain className="w-6 h-6 text-indigo-600 mt-1" />
               <span className="text-gray-700">
-                Δημιουργία ολοκληρωμένων στρατηγικών περιεχομένου που δίνουν
-                στις μάρκες{" "}
-                <span className="font-semibold">μοναδική ταυτότητα</span>.
+                Στρατηγικός σχεδιασμός περιεχομένου και responsive design για{" "}
+                <span className="font-semibold">
+                  άψογη εμπειρία σε κάθε συσκευή
+                </span>
+                .
               </span>
             </li>
           </ul>
@@ -77,12 +79,14 @@ export default function AboutUs() {
           {/* Stats */}
           <div className="grid grid-cols-2 gap-6 mt-12">
             <div className="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition">
-              <h3 className="text-3xl font-extrabold text-blue-600">45+</h3>
-              <p className="text-sm text-gray-500 mt-1">Projects</p>
+              <h3 className="text-3xl font-extrabold text-blue-600">60+</h3>
+              <p className="text-sm text-gray-500 mt-1">Websites & E-shops</p>
             </div>
             <div className="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition">
-              <h3 className="text-3xl font-extrabold text-blue-600">98%</h3>
-              <p className="text-sm text-gray-500 mt-1">Ικανοποίηση Πελατών</p>
+              <h3 className="text-3xl font-extrabold text-blue-600">95%</h3>
+              <p className="text-sm text-gray-500 mt-1">
+                Επαναλαμβανόμενοι Πελάτες
+              </p>
             </div>
           </div>
         </motion.div>

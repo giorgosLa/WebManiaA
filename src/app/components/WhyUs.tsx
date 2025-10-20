@@ -2,7 +2,14 @@
 
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
-import { Briefcase, TrendingUp, BarChart3, FileSearch } from "lucide-react";
+import {
+  Briefcase,
+  BarChart3,
+  Rocket,
+  ShieldCheck,
+  Monitor,
+  Cpu,
+} from "lucide-react";
 
 // ✅ Dynamic import για να αποφύγουμε SSR errors
 const CountUp = dynamic(() => import("react-countup"), { ssr: false });
@@ -10,30 +17,46 @@ const CountUp = dynamic(() => import("react-countup"), { ssr: false });
 const advantages = [
   {
     icon: <Briefcase className="w-10 h-10 text-blue-500 drop-shadow-glow" />,
-    title: "Εμπειρία",
-    desc: "Πάνω από 10 χρόνια εμπειρίας και 200+ πελάτες σε Ελλάδα & εξωτερικό.",
-    value: 10,
-    suffix: "+",
+    title: "Custom Development",
+    desc: "Προσαρμοσμένες λύσεις για κάθε επιχείρηση χωρίς περιορισμούς πλατφορμών.",
+    value: 100,
+    suffix: "%",
   },
   {
-    icon: <TrendingUp className="w-10 h-10 text-green-500 drop-shadow-glow" />,
-    title: "ROI driven results",
-    desc: "Επικεντρωνόμαστε σε μετρήσιμα αποτελέσματα και απόδοση της επένδυσης σου.",
-    value: 200,
+    icon: <Rocket className="w-10 h-10 text-green-500 drop-shadow-glow" />,
+    title: "High Performance",
+    desc: "Γρήγορες ιστοσελίδες και web apps με optimized κώδικα για άριστη εμπειρία χρήστη.",
+    value: 100,
     suffix: "%",
   },
   {
     icon: <BarChart3 className="w-10 h-10 text-purple-500 drop-shadow-glow" />,
-    title: "Data-driven στρατηγική",
-    desc: "Στρατηγικές βασισμένες σε δεδομένα για σωστές αποφάσεις marketing.",
-    value: 150,
-    suffix: "+",
+    title: "SEO Optimized",
+    desc: "Ιστοσελίδες σχεδιασμένες για άριστη SEO απόδοση και υψηλή οργανική επισκεψιμότητα.",
+    value: 100,
+    suffix: "%",
   },
   {
-    icon: <FileSearch className="w-10 h-10 text-orange-500 drop-shadow-glow" />,
-    title: "Διαφάνεια & reporting",
-    desc: "Σαφείς αναφορές και διαφάνεια σε κάθε βήμα της συνεργασίας μας.",
+    icon: (
+      <ShieldCheck className="w-10 h-10 text-orange-500 drop-shadow-glow" />
+    ),
+    title: "Security & Maintenance",
+    desc: "Ασφαλή websites με συνεχή υποστήριξη, updates και προστασία από απειλές.",
+    value: 99,
+    suffix: "%",
+  },
+  {
+    icon: <Monitor className="w-10 h-10 text-indigo-500 drop-shadow-glow" />,
+    title: "Responsive Design",
+    desc: "Ιστοσελίδες πλήρως responsive σε desktop, tablet και κινητά.",
     value: 100,
+    suffix: "%",
+  },
+  {
+    icon: <Cpu className="w-10 h-10 text-teal-500 drop-shadow-glow" />,
+    title: "UX/UI Excellence",
+    desc: "User-friendly και ελκυστικό design που αυξάνει engagement και conversions.",
+    value: 95,
     suffix: "%",
   },
 ];

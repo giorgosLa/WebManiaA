@@ -8,29 +8,29 @@ import faqAnimation from "../../../public/digital2.json";
 
 const faqs = [
   {
-    question: "Τι είναι το Digital Marketing;",
+    question: "Τι είναι μια υπηρεσία Web Development;",
     answer:
-      "Το Digital Marketing είναι το σύνολο των ενεργειών προώθησης που γίνονται online, όπως διαφήμιση σε social media, Google Ads, SEO, email marketing και content marketing, με στόχο την ανάπτυξη μιας επιχείρησης.",
+      "Οι υπηρεσίες Web Development περιλαμβάνουν τον σχεδιασμό, την ανάπτυξη και τη συντήρηση websites ή web εφαρμογών, με στόχο τη δημιουργία γρήγορων, λειτουργικών και μοντέρνων digital προϊόντων.",
   },
   {
-    question: "Γιατί χρειάζομαι Digital Marketing για την επιχείρησή μου;",
+    question: "Γιατί χρειάζομαι custom web development για την επιχείρησή μου;",
     answer:
-      "Επειδή το κοινό σου βρίσκεται online! Με το σωστό digital marketing μπορείς να αυξήσεις τις πωλήσεις σου, να ενισχύσεις την αναγνωρισιμότητα του brand σου και να αποκτήσεις πιστούς πελάτες.",
+      "Μια custom λύση εξασφαλίζει ότι το website ή η web εφαρμογή σας θα καλύπτει απόλυτα τις ανάγκες σας, θα είναι γρήγορο, ασφαλές, SEO-friendly και πλήρως προσαρμοσμένο στο brand σας.",
   },
   {
-    question: "Πόσο γρήγορα θα δω αποτελέσματα;",
+    question: "Πόσο γρήγορα θα είναι έτοιμο το website μου;",
     answer:
-      "Αυτό εξαρτάται από τη στρατηγική. Οι καμπάνιες Google Ads ή Social Media Ads μπορούν να φέρουν άμεσα leads, ενώ το SEO και το content marketing απαιτούν περισσότερο χρόνο (3-6 μήνες) για να δεις ουσιαστικά αποτελέσματα.",
+      "Ο χρόνος ολοκλήρωσης εξαρτάται από την πολυπλοκότητα του project. Ένα απλό website μπορεί να ολοκληρωθεί σε 3-4 εβδομάδες, ενώ πιο σύνθετες εφαρμογές απαιτούν περισσότερο χρόνο και φάσεις ανάπτυξης.",
   },
   {
-    question: "Τι περιλαμβάνει μια στρατηγική digital marketing;",
+    question: "Τι περιλαμβάνει μια διαδικασία ανάπτυξης website;",
     answer:
-      "Ανάλυση αγοράς & ανταγωνισμού, ορισμό στόχων, σχεδιασμό καμπανιών (Google Ads, Meta Ads, Email), SEO, content strategy, social media management και συνεχή βελτιστοποίηση βάσει δεδομένων.",
+      "Σχεδιασμό UX/UI, ανάπτυξη custom features, responsive design, SEO optimization, testing σε όλες τις συσκευές και browsers, και υποστήριξη μετά την παράδοση.",
   },
   {
-    question: "Πόσο κοστίζει το Digital Marketing;",
+    question: "Πόσο κοστίζει ένα website ή μια web εφαρμογή;",
     answer:
-      "Το κόστος εξαρτάται από τις ανάγκες και τους στόχους της επιχείρησης. Συνήθως συνδυάζει budget διαφημίσεων (media spend) και κόστος υπηρεσιών για τη στρατηγική, δημιουργικό και διαχείριση καμπανιών.",
+      "Το κόστος εξαρτάται από τις ανάγκες και την πολυπλοκότητα του project. Παράγοντες όπως custom development, design, number of pages και λειτουργικότητες καθορίζουν το τελικό budget.",
   },
 ];
 
@@ -48,7 +48,7 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
         hover:border-blue-200`}
     >
       <div className="flex justify-between items-center">
-        <h3 className="text-lg md:text-xl font-semibold text-gray-800">
+        <h3 className="text-lg md:text-xl font-semibold text-blue-800">
           {question}
         </h3>
         <motion.div

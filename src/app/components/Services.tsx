@@ -1,44 +1,44 @@
 "use client";
 
 import {
-  Megaphone,
-  Search,
-  Mail,
-  FileText,
-  BarChart3,
-  Lightbulb,
+  Globe,
+  Code,
+  ShoppingCart,
+  Server,
+  Layout,
+  Wrench,
 } from "lucide-react";
 
 const services = [
   {
-    icon: <Megaphone className="w-10 h-10 text-blue-600" />,
-    title: "Social Media Marketing",
-    desc: "Δημιουργούμε καμπάνιες που αυξάνουν την απήχηση και την αλληλεπίδραση στο Facebook, Instagram, TikTok & LinkedIn.",
+    icon: <Globe className="w-10 h-10 text-blue-600" />,
+    title: "Κατασκευή Ιστοσελίδων",
+    desc: "Σχεδιάζουμε και αναπτύσσουμε δυναμικές, γρήγορες και πλήρως responsive ιστοσελίδες που εντυπωσιάζουν και αποδίδουν.",
   },
   {
-    icon: <Search className="w-10 h-10 text-green-600" />,
-    title: "SEO & SEM",
-    desc: "Βελτιστοποίηση ιστοσελίδων για Google και στοχευμένες καμπάνιες διαφημίσεων που φέρνουν πραγματικά αποτελέσματα.",
+    icon: <Code className="w-10 h-10 text-green-600" />,
+    title: "Custom Web Applications",
+    desc: "Αναπτύσσουμε εξατομικευμένες web εφαρμογές για επιχειρήσεις που χρειάζονται λύσεις προσαρμοσμένες στις ανάγκες τους.",
   },
   {
-    icon: <Mail className="w-10 h-10 text-red-600" />,
-    title: "Email Marketing",
-    desc: "Στρατηγικές καμπάνιες email για lead nurturing, αυξημένες πωλήσεις και διατήρηση πελατών.",
+    icon: <ShoppingCart className="w-10 h-10 text-red-600" />,
+    title: "E-Commerce Development",
+    desc: "Δημιουργούμε eshops με έμφαση στη λειτουργικότητα, την ασφάλεια και την εμπειρία του χρήστη — Shopify, WooCommerce ή custom λύσεις.",
   },
   {
-    icon: <FileText className="w-10 h-10 text-indigo-600" />,
-    title: "Content Creation",
-    desc: "Δημιουργία περιεχομένου που ξεχωρίζει: άρθρα, γραφικά, βίντεο και υλικό που χτίζει εμπιστοσύνη.",
+    icon: <Server className="w-10 h-10 text-indigo-600" />,
+    title: "Backend Development",
+    desc: "Χτίζουμε ισχυρά APIs και βάσεις δεδομένων που εξασφαλίζουν ταχύτητα, ασφάλεια και επεκτασιμότητα.",
   },
   {
-    icon: <BarChart3 className="w-10 h-10 text-orange-600" />,
-    title: "Performance Ads",
-    desc: "Διαφημίσεις υψηλής απόδοσης σε Meta, Google και άλλα δίκτυα, με focus στο ROI.",
+    icon: <Layout className="w-10 h-10 text-orange-600" />,
+    title: "UI/UX Design",
+    desc: "Σχεδιάζουμε εμπειρίες που ξεχωρίζουν — με έμφαση στην ευχρηστία, την αισθητική και τη μετατροπή επισκεπτών σε πελάτες.",
   },
   {
-    icon: <Lightbulb className="w-10 h-10 text-yellow-500" />,
-    title: "Branding & Strategy",
-    desc: "Διαμορφώνουμε την ταυτότητα και στρατηγική της επιχείρησής σου για μακροχρόνια ανάπτυξη.",
+    icon: <Wrench className="w-10 h-10 text-yellow-500" />,
+    title: "Συντήρηση & Υποστήριξη",
+    desc: "Παρέχουμε συνεχή τεχνική υποστήριξη, αναβαθμίσεις και monitoring για να λειτουργεί η ιστοσελίδα σου απρόσκοπτα.",
   },
 ];
 

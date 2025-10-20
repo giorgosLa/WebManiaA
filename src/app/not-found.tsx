@@ -5,7 +5,6 @@ import Navbar from "./components/Navbar";
 export default function NotFound() {
   return (
     <>
-      <Navbar />
       <main className="flex min-h-screen flex-col items-center justify-center bg-white text-center px-6">
         {/* Error Code */}
         <h1 className="text-8xl font-extrabold text-blue-600">404</h1>
