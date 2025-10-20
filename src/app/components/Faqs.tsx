@@ -28,7 +28,7 @@ const faqs = [
       "Σχεδιασμό UX/UI, ανάπτυξη custom features, responsive design, SEO optimization, testing σε όλες τις συσκευές και browsers, και υποστήριξη μετά την παράδοση.",
   },
   {
-    question: "Πόσο κοστίζει ένα website ή μια web εφαρμογή;",
+    question: "Πόσο κοσκκκτίζει ένα website ή μια web εφαρμογή;",
     answer:
       "Το κόστος εξαρτάται από τις ανάγκες και την πολυπλοκότητα του project. Παράγοντες όπως custom development, design, number of pages και λειτουργικότητες καθορίζουν το τελικό budget.",
   },
